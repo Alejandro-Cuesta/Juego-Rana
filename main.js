@@ -11,17 +11,26 @@ constructor() {
   this.puntosElement = document.getElementById("puntos")
   this.tiempoRestante = 30;
   this.tiempoElement = document.getElementById("tiempo");
+  this.puntuacionAltoElement = document.getElementById("puntuacion-alta");
+  this.puntuacionAltoElement.textContent = `Mejor puntuación: ${localStorage.getItem("puntuacionAlto") || 0}`;
   this.iniciarCuentaAtras();
   this.juegoTerminado = false;
 
 }
 finalizarJuego() {
   this.juegoTerminado = true;
+  const puntuacionAlto = parseInt(localStorage.getItem("puntuacionAlto")) || 0;
+  if (this.puntuacion > puntuacionAlto) {
+    localStorage.setItem("puntuacionAlto", this.puntuacion);
+  }
+  const nuevaPuntuacionAlto = parseInt(localStorage.getItem("puntuacionAlto")) || 0;
+  this.puntuacionAltoElement.textContent = `Mejor puntuación: ${nuevaPuntuacionAlto}`;
   const mensaje = document.createElement("div");
   mensaje.id = "mensaje-final";
   mensaje.innerHTML = `
     <h2>¡Tiempo terminado!</h2>
     <p>Puntuación final: ${this.puntuacion}</p>
+    <p>Mejor puntuación: ${nuevaPuntuacionAlto}</p>
     <button id="reiniciar">Reiniciar</button>
   `;
   this.conteiner.appendChild(mensaje);

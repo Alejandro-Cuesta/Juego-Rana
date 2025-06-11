@@ -53,6 +53,13 @@ body {
   margin: 10px 0;
   color: red;
 }
+ 
+#puntuacion-alta {
+  font-size: 18px;
+  color:gold;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
 
 #mensaje-final {
   position: absolute;
@@ -65,4 +72,8 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1000;
+}
+
+#mensaje-final p {
+margin: 10px 0;
 }
