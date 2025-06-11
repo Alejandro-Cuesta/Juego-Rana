@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background-color: #b8b8b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100;
+  flex-direction: column;
+}
+#game-container {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  margin: 20px auto;
+  background-image: url(Free-Forest-Battle-Backgrounds6.jpg);
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.personaje {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background-image: url(rana.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  
+}
+
+.moneda {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-image: url(mosca.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+#puntos {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#tiempo {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px 0;
+  color: red;
+}
+
+#mensaje-final {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1000;
+}
