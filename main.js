@@ -125,6 +125,7 @@ class Personaje {
     }
 
     saltar() {
+        this.element.classList.add("saltando");
         this.saltando = true;
         let alturaMaxima = this.y - 240;
         const salto = setInterval(() => {
@@ -149,6 +150,7 @@ class Personaje {
                 this.actualizarPosicion();
             }
         }, 20);
+        this.element.classList.remove("saltando");
     }
     actualizarPosicion() {
         this.element.style.left = `${this.x}px`;
