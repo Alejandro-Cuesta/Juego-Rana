@@ -31,8 +31,8 @@ finalizarJuego() {
     <h2>¡Tiempo terminado!</h2>
     <p>Puntuación final: ${this.puntuacion}</p>
     <p>Mejor puntuación: ${nuevaPuntuacionAlto}</p>
-    <button id="reiniciar">Reiniciar</button>
-  `;
+    <button id="reiniciar">Reiniciar</button>`;
+    
   this.conteiner.appendChild(mensaje);
   document.getElementById("reiniciar").addEventListener("click", () => {
     location.reload(); 
@@ -121,8 +121,18 @@ class Personaje {
           this.saltar();
      }
     }
-    this.actualizarPosicion();
+
+    const limiteIzquierdo = -60;
+    const limiteDerecho = 800 - this.width + 60;
+
+    if (this.x < limiteIzquierdo) {
+      this.x = limiteIzquierdo;
+    } else if (this.x > limiteDerecho) {
+      this.x = limiteDerecho;
     }
+    
+    this.actualizarPosicion();
+}
 
     saltar() {
         this.element.classList.add("saltando");
